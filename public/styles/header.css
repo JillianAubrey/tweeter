@@ -1,6 +1,13 @@
 header {
-  background-color: goldenrod;
+  background-color: #daa520;
+  color: white;
   height: 400px;
   width: 100%;
   margin-top: 120px;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../images/cloth-alike.png");
 }
