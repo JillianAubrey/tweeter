@@ -6,20 +6,24 @@ nav{
   padding-left: 1.5em;
   padding-right: 1.5em;
   position: fixed;
+  top: 0;
 
   display:flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 
 #tweeter-logo {
-  font-family: 'Bungee', cursive; 
+  font-family: 'Bungee', cursive;
+  padding-bottom: 0.5em;
+  font-size: 32px;
 }
 
 nav div {
   display: flex;
   flex-flow: column;
   align-items: center;
+  padding-bottom: 0.5em;
 }
 
 nav i {
