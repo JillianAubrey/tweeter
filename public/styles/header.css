@@ -11,3 +11,7 @@ header {
   justify-content: center;
   background-image: url("../images/cloth-alike.png");
 }
+
+header h2 {
+  font-weight: normal;
+}
