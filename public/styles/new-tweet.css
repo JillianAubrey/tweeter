@@ -31,3 +31,7 @@
   background-color: #4056A1;
   border: 0;
 }
+
+.new-tweet form .counter.negative {
+  color: #E00000;
+}
