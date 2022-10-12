@@ -27,7 +27,7 @@ const timeUnits = [
     name: 'year',
     multipleOfPrevious: 52,
   }
-]
+];
 
 const getRelativeTime = function(timestamp) {
   let difference = Date.now() - timestamp;
@@ -41,7 +41,7 @@ const getRelativeTime = function(timestamp) {
     difference = difference / timeUnits[i].multipleOfPrevious;
     roundedDifference = Math.floor(difference);
     if (!timeUnits[i + 1] || difference < timeUnits[i + 1].multipleOfPrevious) {
-      return `${roundedDifference} ${timeUnits[i].name}${roundedDifference === 1 ? '' : 's'} ago`
+      return `${roundedDifference} ${timeUnits[i].name}${roundedDifference === 1 ? '' : 's'} ago`;
     }
   }
-}
+};
