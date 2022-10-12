@@ -71,3 +71,12 @@
 .tweet footer .icons i:hover {
   color: #daa520;
 }
+
+.tweet footer .likes {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.tweet footer .likes p {
+  font-size: x-small;
+}
