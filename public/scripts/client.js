@@ -3,9 +3,8 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
- $(document).ready(() => {
-  
-   const createTweetElement = function(tweet) {
+$(document).ready(() => {
+  const createTweetElement = function(tweet) {
     const $tweet = $(`<article class='tweet'>`);
     const $tweetHeader = $(
       `<header>
@@ -17,10 +16,10 @@
       </header>`
     );
     const $tweetContent = $(`<p>`);
-    $tweetContent.text(tweet.content.text)
+    $tweetContent.text(tweet.content.text);
     const $tweetFooter = $(
       `<footer>
-        <p>10 days ago</p>
+        <p>${getRelativeTime(tweet.created_at)}</p>
         <div class="icons">
           <i class="fa-solid fa-flag"></i>
           <i class="fa-solid fa-retweet"></i>
@@ -37,23 +36,23 @@
     $tweet.append($tweetFooter);
 
     return $tweet;
-   }
+  };
    
-   const tweetData = {
-     "user": {
-       "name": "Newton",
-       "avatars": "https://i.imgur.com/73hZDYK.png",
-         "handle": "@SirIsaac"
-       },
-     "content": {
-         "text": "If I have seen further it is by standing on the shoulders of giants"
-       },
-     "created_at": 1461116232227
-   }
+  const tweetData = {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png",
+      "handle": "@SirIsaac"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
+  };
    
-   const $tweet = createTweetElement(tweetData);
+  const $tweet = createTweetElement(tweetData);
    
-   // Test / driver code (temporary)
-   console.log($tweet); // to see what it looks like
-   $('#tweets-container').append($tweet); 
- })
+  // Test / driver code (temporary)
+  console.log($tweet); // to see what it looks like
+  $('#tweets-container').append($tweet);
+});
