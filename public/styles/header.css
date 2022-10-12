@@ -1,4 +1,4 @@
-header {
+.page-header {
   background-color: #daa520;
   color: white;
   height: 400px;
@@ -12,6 +12,6 @@ header {
   background-image: url("../images/cloth-alike.png");
 }
 
-header h2 {
+.page-header h2 {
   font-weight: normal;
 }
