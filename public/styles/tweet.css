@@ -2,19 +2,44 @@
   border: solid 3px;
   display: flex;
   flex-flow: column nowrap;
-  padding: 0 8px;
   margin: 2em 0;
+}
+
+.tweet:hover {
+  box-shadow: 5px 5px #c9cae2;
 }
 
 .tweet header {
   display: flex;
   flex-flow: row;
   justify-content: space-between;
+  padding: 0.75em;
 }
 
-.tweet header div {
+.tweet header .user {
   display: flex;
   flex-flow: row;
+  justify-content: flex-start;
+}
+
+.tweet header .user img {
+  height: 40px;
+  width: 40px;
+}
+
+.tweet header .user p {
+  margin: auto 0 auto 0.5em;
+}
+
+.tweet header .handle {
+  color: #c9cae2;
+  font-weight: bold;
+  margin: auto 0;
+}
+
+.tweet > p {
+  margin: 0.75em;
+  font-weight: bold;
 }
 
 .tweet footer {
@@ -23,32 +48,26 @@
   justify-content: space-between;
   border-width: 3px 0 0 0;
   border-style: solid;
+  padding: 0.25em 0.5em 0.75em;
+  margin: 0.5em 0.3em 0;
 }
 
-.tweet footer div {
+.tweet footer p {
+  font-size: 0.6em;
+}
+
+.tweet footer .icons {
   display: flex;
   flex-flow: row;
-  color:darkblue;
+  color: #4056A1;
+  width: 4em;
+  justify-content: space-between;
 }
 
+.tweet footer .icons i {
+  font-size: 0.75em;
+}
 
-/*    <article class="tweet">
-        <header>
-          <div>
-            <img src="https://i.imgur.com/73hZDYK.png">
-            <p>Newton</p>
-          </div>
-          <p>@SirIsaac</p>
-        </header>
-        <p>
-          Tweet Text
-        </p>
-        <footer>
-          <p>10 days age</p>
-          <div>
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart"></i>
-          </div>
-        </footer>
-      </article> */
+.tweet footer .icons i:hover {
+  color: #daa520;
+}

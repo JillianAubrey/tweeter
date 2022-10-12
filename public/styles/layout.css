@@ -35,3 +35,7 @@ main {
 h2 {
   font-weight: normal;
 }
+
+p {
+  margin: 0;
+}
