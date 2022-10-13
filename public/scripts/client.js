@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(() => {
+$(() => {
   const loadTweets = function(newestOnly) {
     const url = '/tweets';
     const method = 'GET';
@@ -18,7 +18,7 @@ $(document).ready(() => {
   };
   loadTweets();
 
-  $('form.compose').submit(function(event) {
+  $('form.compose').on('submit', function(event) {
     event.preventDefault();
     const $newTweet = $('#new-tweet');
     const $textArea = $('#new-tweet').find('textarea');
@@ -27,19 +27,19 @@ $(document).ready(() => {
     if ($(document).scrollTop() > headerBottom) {
       $(document).scrollTop(headerBottom);
       $newTweet.slideDown();
-      $textArea.focus();
+      $textArea.trigger('focus');
       return
     }
     if ($newTweet.is(':visible')) {
       $newTweet.slideUp();
-      $textArea.blur();
+      $textArea.trigger('blur');
       return;
     }
     $newTweet.slideDown();
-    $textArea.focus();
+    $textArea.trigger('focus');
   })
   
-  $('#new-tweet form').submit(function(event) {
+  $('#new-tweet form').on('submit', function(event) {
     event.preventDefault();
     const $errorMessage = $(this).parent().children('.error-message');
 
