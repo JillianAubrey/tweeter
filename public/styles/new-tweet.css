@@ -1,24 +1,24 @@
-.new-tweet {
+#new-tweet {
   display: flex;
   flex-flow: column;
   margin: 0.75em 0 0 0;
 }
 
-.new-tweet .error-message {
+#new-tweet .error-message {
   color: #E00000;
   font-weight: bold;
 }
 
-.new-tweet form {
+#new-tweet form {
   display: flex;
   flex-flow: column;
 }
 
-.new-tweet form label {
+#new-tweet form label {
   font-weight: bold;
 }
 
-.new-tweet form textarea {
+#new-tweet form textarea {
   border-width: 0 0 3px 0;
   resize: none;
   background-color: #f4f1ec;
@@ -26,18 +26,18 @@
   height: 1.5em;
 }
 
-.new-tweet form div {
+#new-tweet form div {
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
 }
 
-.new-tweet form button {
+#new-tweet form button {
   color: white;
   background-color: #4056A1;
   border: 0;
 }
 
-.new-tweet form .counter.negative {
+#new-tweet form .counter.negative {
   color: #E00000;
 }
