@@ -1,9 +1,11 @@
-const renderTweets = function(tweets, slideIn) {
+// Renders an array of tweets to the tweets-area
+// Optional animateEntry will cause tweet to slideDown if truthy
+const renderTweets = function(tweets, animateEntry) {
   sortTweets(tweets);
   tweets.forEach(tweet => {
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').prepend($tweet);
-    if (slideIn) {
+    if (animateEntry) {
       $tweet.hide();
       $tweet.slideDown();
     }
@@ -13,10 +15,12 @@ const renderTweets = function(tweets, slideIn) {
   $('time.timeago').timeago();
 };
 
+// Mutable - Sorts an array of tweets from oldest to newest
 const sortTweets = function(tweets) {
   tweets.sort((a, b) => a.created_at - b.created_at);
 };
 
+// Creates a tweet as a jquery object
 const createTweetElement = function(tweet) {
   const $tweet = $(`<article class='tweet'>`);
   const $tweetHeader = $(
@@ -35,10 +39,10 @@ const createTweetElement = function(tweet) {
     `<footer>
       <time class="timeago" datetime="${isoDate}">${isoDate}</time>
       <div class="icons">
-        <i class="fa-solid fa-flag"></i>
-        <i class="fa-solid fa-retweet"></i>
+        <i class="fa-solid fa-flag" title="Flag"></i>
+        <i class="fa-solid fa-retweet" title="Re-tweet"></i>
         <div class="likes">
-          <i class="fa-solid fa-heart"></i>
+          <i class="fa-solid fa-heart" title="Like"></i>
           <p>1</p>
         </div>
       </div>
