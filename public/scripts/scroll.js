@@ -1,8 +1,8 @@
 $(() => {
   $(document).on('scroll', function(event) {
-    const headerBottom = $('.page-header').height();
+    const mainTop = $('main').offset().top;
     const $scrollToTop = $('.scroll-to-top');
-    if ($(document).scrollTop() > headerBottom) {
+    if ($(document).scrollTop() > mainTop) {
       $scrollToTop.show();
       return;
     }
