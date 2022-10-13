@@ -17,8 +17,14 @@ $(document).ready(() => {
     });
   };
   loadTweets();
+
+  $('form.compose').submit(function(event) {
+    event.preventDefault();
+    $('#new-tweet').slideToggle();
+    $('#new-tweet').find('textarea').focus();
+  })
   
-  $('#new-tweet .form').submit(function(event) {
+  $('#new-tweet form').submit(function(event) {
     event.preventDefault();
     const $errorMessage = $(this).parent().children('.error-message');
 

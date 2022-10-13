@@ -19,11 +19,17 @@ nav{
   font-size: 32px;
 }
 
-nav div {
+nav form {
   display: flex;
   flex-flow: column;
   align-items: center;
   padding-bottom: 0.5em;
+}
+
+nav form button {
+  border: 0;
+  background: transparent;
+  color: white;
 }
 
 nav i {

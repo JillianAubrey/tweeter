@@ -34,10 +34,10 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span id="tweeter-logo">tweeter</span>
-      <div class="clickable">
-        <span><strong>Write</strong> a new tweet</span>
+      <form class="compose">
+        <button><strong>Write</strong> a new tweet</button>
         <i class="fa-solid fa-angles-down"></i>
-      </div>
+      </form>
     </nav>
   <!-- Header with info on current user -->
     <header class="page-header">
@@ -54,15 +54,17 @@
     <main class="container">
       <!-- Form for adding a new tweet-->
       <section id="new-tweet">
-        <p class="error-message"></p>
-        <form action="/tweets/" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
+        <div>
+          <p class="error-message"></p>
+          <form action="/tweets/" method="POST">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div>
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </div>
       </section>
       <!-- Container for other tweets on the page -->
       <section id="tweets-container">
