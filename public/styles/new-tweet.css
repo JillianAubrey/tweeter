@@ -26,9 +26,9 @@
 #new-tweet form textarea {
   border-width: 0 0 3px 0;
   resize: none;
-  background-color: #f4f1ec;
-  margin-bottom: 8px;
-  height: 1.5em;
+  background-color: inherit;
+  margin: 8px 0;
+  height: 2.5em;
 }
 
 #new-tweet form div {
