@@ -1,0 +1,16 @@
+@media only screen and (min-width: 1024px) {
+  .page-header {
+    position: fixed;
+    left: 0;
+    width: min(500px, 30%);
+    max-width: 500px;
+    height: 100vh;
+    margin: 0;
+  }
+
+  main.container {
+    width: auto;
+    margin: 120px 0 0 min(500px, 30%);
+    padding: 1em max(5em, 5%) 0;
+  }
+}
