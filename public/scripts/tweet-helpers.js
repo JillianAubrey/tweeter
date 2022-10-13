@@ -4,6 +4,9 @@ const renderTweets = function(tweets) {
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').prepend($tweet);
   });
+
+    //attach timeago to tweet times
+  $('time.timeago').timeago();
 };
 
 const sortTweets = function(tweets) {
@@ -23,9 +26,10 @@ const createTweetElement = function(tweet) {
   );
   const $tweetContent = $(`<p>`);
   $tweetContent.text(tweet.content.text);
+  const isoDate = new Date(tweet.created_at).toISOString();
   const $tweetFooter = $(
     `<footer>
-      <p>${timeago.format(tweet.created_at)}</p>
+      <time class="timeago" datetime="${isoDate}">${isoDate}</time>
       <div class="icons">
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
