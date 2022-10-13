@@ -8,7 +8,7 @@ $(document).ready(() => {
   const loadTweets = function() {
     const url = '/tweets';
     const method = 'GET';
-    $.ajax({ url, method }).done(tweets => {
+    $.ajax({ url, method }).done((tweets) => {
       renderTweets(tweets);
     })
   }
@@ -27,8 +27,10 @@ $(document).ready(() => {
     if (tweetText.length > maxTweetLength) {
       return alert(`Tweet cannot be more than ${maxTweetLength} characters!`);
     }
-    $.ajax({ url, method, data }).done((response) => {
-      console.log(response);
+    $.ajax({ url, method, data }).done(() => {
+      $(this)[0].reset();
+      $('#tweets-container').text('');
+      loadTweets();
     });
   })
 
