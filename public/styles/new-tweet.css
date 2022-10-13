@@ -43,10 +43,12 @@
   border: 0;
 }
 
-#new-tweet form button:hover {
-  background-color: #daa520;
-}
-
 #new-tweet form .counter.negative {
   color: #E00000;
+}
+
+@media (hover) {
+  #new-tweet form button:hover {
+    background-color: #daa520;
+  }
 }

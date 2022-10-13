@@ -19,10 +19,6 @@ nav button {
   color: inherit;
 }
 
-nav button:hover {
-  color: #daa520;
-}
-
 #tweeter-logo {
   font-family: 'Bungee', cursive;
   padding-bottom: 0.5em;
@@ -38,4 +34,10 @@ nav form {
 
 nav i {
   color: red;
+}
+
+@media (hover) {
+  nav button:hover {
+    color: #daa520;
+  }
 }

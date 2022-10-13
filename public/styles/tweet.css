@@ -5,10 +5,6 @@
   margin: 2em 0;
 }
 
-.tweet:hover {
-  box-shadow: 5px 5px #c9cae2;
-}
-
 .tweet header {
   display: flex;
   flex-flow: row;
@@ -68,10 +64,6 @@
   font-size: 0.75em;
 }
 
-.tweet footer .icons i:hover {
-  color: #daa520;
-}
-
 .tweet footer .likes {
   display: flex;
   flex-flow: row nowrap;
@@ -79,4 +71,14 @@
 
 .tweet footer .likes p {
   font-size: x-small;
+}
+
+@media (hover) {
+  .tweet footer .icons i:hover {
+    color: #daa520;
+  }
+
+  .tweet:hover {
+    box-shadow: 5px 5px #c9cae2;
+  }
 }
