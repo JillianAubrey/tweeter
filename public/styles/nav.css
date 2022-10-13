@@ -13,6 +13,16 @@ nav{
   align-items: flex-end;
 }
 
+nav button {
+  border: 0;
+  background-color: inherit;
+  color: inherit;
+}
+
+nav button:hover {
+  color: #daa520;
+}
+
 #tweeter-logo {
   font-family: 'Bungee', cursive;
   padding-bottom: 0.5em;
@@ -24,12 +34,6 @@ nav form {
   flex-flow: column;
   align-items: center;
   padding-bottom: 0.5em;
-}
-
-nav form button {
-  border: 0;
-  background: transparent;
-  color: white;
 }
 
 nav i {

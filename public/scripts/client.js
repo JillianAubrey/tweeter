@@ -35,6 +35,11 @@ $(() => {
     $newTweet.slideDown();
     $textArea.trigger('focus');
   });
+
+  $('#tweeter-logo').on('click', function(event) {
+    event.preventDefault();
+    location.reload();
+  })
   
   $('#new-tweet form').on('submit', function(event) {
     event.preventDefault();
