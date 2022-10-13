@@ -5,14 +5,11 @@
  */
 
 $(() => {
-  const loadTweets = function(newestOnly) {
+  const loadTweets = function() {
     const url = '/tweets';
     const method = 'GET';
     $.ajax({ url, method }).done((tweets) => {
-      if (newestOnly) {
-        renderTweets(tweets.slice(-1));
-        return;
-      }
+      sortTweets(tweets);
       renderTweets(tweets);
     });
   };
@@ -64,9 +61,9 @@ $(() => {
       return;
     }
 
-    $.ajax({ url, method, data }).done(() => {
+    $.ajax({ url, method, data }).done(tweet => {
       $textArea.val('').trigger('input');
-      loadTweets(true);
+      renderTweets([tweet]);
     });
   });
 });
