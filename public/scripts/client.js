@@ -32,24 +32,25 @@ $(document).ready(() => {
     const url = '/tweets';
     const method = 'POST';
 
-    const tweetText = data.slice('text='.length);
+    const $textArea = $(this).find('textarea');
+    const tweetLen = $textArea.val().length;
     const maxTweetLength = 140;
 
     $errorMessage.slideUp(100);
 
-    if (!tweetText) {
+    if (!tweetLen) {
       $errorMessage.text('Tweet cannot be empty!');
       $errorMessage.slideDown();
       return;
     }
-    if (tweetText.length > maxTweetLength) {
+    if (tweetLen > maxTweetLength) {
       $errorMessage.text(`Tweet cannot be more than ${maxTweetLength} characters!`);
       $errorMessage.slideDown();
       return;
     }
 
     $.ajax({ url, method, data }).done(() => {
-      $(this)[0].reset();
+      $textArea.val('').trigger('input');
       loadTweets(true);
     });
   });
