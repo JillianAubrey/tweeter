@@ -4,6 +4,16 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(() => {
+  $('.new-tweet form').submit(function(event) {
+    event.preventDefault();
+    const data = $(this).serialize();
+    const url = '/tweets';
+    const method = 'POST';
+    $.ajax({ url, method, data, }).done(() => {
+      console.log('Form posted!');
+    });
+  })
+
   const data = [
     {
       "user": {
