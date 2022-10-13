@@ -5,7 +5,7 @@ const renderTweets = function(tweets) {
     $('#tweets-container').prepend($tweet);
   });
 
-    //attach timeago to tweet times
+  //attach timeago to tweet times
   $('time.timeago').timeago();
 };
 

@@ -7,10 +7,10 @@ $(() => {
       return;
     }
     $scrollToTop.hide();
-  })
+  });
 
-  $('.scroll-to-top').on('click', function (event) {
+  $('.scroll-to-top').on('click', function(event) {
     event.preventDefault();
     $(document).scrollTop(0);
-  })
-})
+  });
+});

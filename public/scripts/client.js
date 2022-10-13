@@ -18,21 +18,6 @@ $(() => {
   };
   loadTweets();
 
-  $(document).on('scroll', function(event) {
-    const headerBottom = $('.page-header').height();
-    const $scrollToTop = $('.scroll-to-top');
-    if ($(document).scrollTop() > headerBottom) {
-      $scrollToTop.show();
-      return;
-    }
-    $scrollToTop.hide();
-  })
-
-  $('.scroll-to-top').on('click', function (event) {
-    event.preventDefault();
-    $(document).scrollTop(0);
-  })
-
   $('form.compose').on('submit', function(event) {
     event.preventDefault();
     const $newTweet = $('#new-tweet');
@@ -43,7 +28,7 @@ $(() => {
       $(document).scrollTop(headerBottom);
       $newTweet.slideDown();
       $textArea.trigger('focus');
-      return
+      return;
     }
     if ($newTweet.is(':visible')) {
       $newTweet.slideUp();
@@ -52,7 +37,7 @@ $(() => {
     }
     $newTweet.slideDown();
     $textArea.trigger('focus');
-  })
+  });
   
   $('#new-tweet form').on('submit', function(event) {
     event.preventDefault();
