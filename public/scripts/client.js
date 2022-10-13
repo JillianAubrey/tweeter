@@ -3,6 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 $(document).ready(() => {
   $('.new-tweet form').submit(function(event) {
     event.preventDefault();
@@ -61,7 +62,7 @@ $(document).ready(() => {
     $tweetContent.text(tweet.content.text);
     const $tweetFooter = $(
       `<footer>
-        <p>${getRelativeTime(tweet.created_at)}</p>
+        <p>${timeago.format(tweet.created_at)}</p>
         <div class="icons">
           <i class="fa-solid fa-flag"></i>
           <i class="fa-solid fa-retweet"></i>
