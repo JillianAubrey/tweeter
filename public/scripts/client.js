@@ -33,11 +33,16 @@ $(document).ready(() => {
   })
 
   const renderTweets = function(tweets) {
+    sortTweets(tweets);
     tweets.forEach(tweet => {
       $tweet = createTweetElement(tweet);
       $('#tweets-container').append($tweet);
     });
   };
+
+  const sortTweets = function(tweets) {
+    tweets.sort((a, b) => b.created_at - a.created_at)
+  }
 
   const createTweetElement = function(tweet) {
     const $tweet = $(`<article class='tweet'>`);
