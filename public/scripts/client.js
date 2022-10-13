@@ -20,8 +20,23 @@ $(document).ready(() => {
 
   $('form.compose').submit(function(event) {
     event.preventDefault();
-    $('#new-tweet').slideToggle();
-    $('#new-tweet').find('textarea').focus();
+    const $newTweet = $('#new-tweet');
+    const $textArea = $('#new-tweet').find('textarea');
+    const headerBottom = $('.page-header').height();
+
+    if ($(document).scrollTop() > headerBottom) {
+      $(document).scrollTop(headerBottom);
+      $newTweet.slideDown();
+      $textArea.focus();
+      return
+    }
+    if ($newTweet.is(':visible')) {
+      $newTweet.slideUp();
+      $textArea.blur();
+      return;
+    }
+    $newTweet.slideDown();
+    $textArea.focus();
   })
   
   $('#new-tweet form').submit(function(event) {
