@@ -5,10 +5,14 @@
  */
 
 $(document).ready(() => {
-  const loadTweets = function() {
+  const loadTweets = function(newestOnly) {
     const url = '/tweets';
     const method = 'GET';
     $.ajax({ url, method }).done((tweets) => {
+      if (newestOnly) {
+        renderTweets(tweets.slice(-1));
+        return;
+      }
       renderTweets(tweets);
     })
   }
@@ -16,21 +20,31 @@ $(document).ready(() => {
   
   $('.new-tweet form').submit(function(event) {
     event.preventDefault();
+    const $errorMessage = $(this).parent().children('.error-message');
+
     const data = $(this).serialize();
     const url = '/tweets';
     const method = 'POST';
+
     const tweetText = data.slice('text='.length);
     const maxTweetLength = 140;
+
+    $errorMessage.slideUp(100);
+
     if (!tweetText){
-      return alert('Tweet cannot be empty!');
+      $errorMessage.text('Tweet cannot be empty!');
+      $errorMessage.slideDown();
+      return;
     }
     if (tweetText.length > maxTweetLength) {
-      return alert(`Tweet cannot be more than ${maxTweetLength} characters!`);
+      $errorMessage.text(`Tweet cannot be more than ${maxTweetLength} characters!`);
+      $errorMessage.slideDown();
+      return;
     }
+
     $.ajax({ url, method, data }).done(() => {
       $(this)[0].reset();
-      $('#tweets-container').text('');
-      loadTweets();
+      loadTweets(true);
     });
   })
 
@@ -38,12 +52,12 @@ $(document).ready(() => {
     sortTweets(tweets);
     tweets.forEach(tweet => {
       $tweet = createTweetElement(tweet);
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     });
   };
 
   const sortTweets = function(tweets) {
-    tweets.sort((a, b) => b.created_at - a.created_at)
+    tweets.sort((a, b) => a.created_at - b.created_at)
   }
 
   const createTweetElement = function(tweet) {

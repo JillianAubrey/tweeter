@@ -4,6 +4,11 @@
   margin: 0.75em 0 0 0;
 }
 
+.new-tweet .error-message {
+  color: #E00000;
+  font-weight: bold;
+}
+
 .new-tweet form {
   display: flex;
   flex-flow: column;
