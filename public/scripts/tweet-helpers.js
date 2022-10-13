@@ -1,8 +1,12 @@
-const renderTweets = function(tweets) {
+const renderTweets = function(tweets, slideIn) {
   sortTweets(tweets);
   tweets.forEach(tweet => {
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').prepend($tweet);
+    if (slideIn) {
+      $tweet.hide();
+      $tweet.slideDown();
+    }
   });
 
   //attach timeago to tweet times

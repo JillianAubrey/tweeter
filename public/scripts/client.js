@@ -63,7 +63,7 @@ $(() => {
 
     $.ajax({ url, method, data }).done(tweet => {
       $textArea.val('').trigger('input');
-      renderTweets([tweet]);
+      renderTweets([tweet], true);
     });
   });
 });
