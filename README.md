@@ -1,6 +1,6 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone. This project was completed as a part of my studies at Lighthouse Labs, with the purpose of working on my HTML, CSS, JS, jQuery and AJAX front-end skills, and my Node, Express back-end skills.
+Tweeter is a simple, single-page Twitter clone. This project was completed as a part of my studies at Lighthouse Labs, with the purpose of working on my HTML, CSS, JS, jQuery and AJAX front-end skills. The backend was provided by LHL with only one minor tweak by me.
 
 ## Final Product
 
@@ -18,6 +18,7 @@ Tweeter is a simple, single-page Twitter clone. This project was completed as a 
 
 ## Get started
 
-- Install all dependencies (using the `npm install` command).
-- Run the development web server using the `npm start` command.
+- Clone the repository using `git clone git@github.com:JillianAubrey/tweeter.git`
+- Install all dependencies using the `npm install`.
+- Run the development web server using the `npm start`.
 - Visit http://localhost:8080/ to view the page.
